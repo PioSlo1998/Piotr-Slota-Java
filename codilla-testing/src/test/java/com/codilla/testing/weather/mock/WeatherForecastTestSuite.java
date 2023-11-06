@@ -58,4 +58,17 @@ public class WeatherForecastTestSuite {
         //Then
         assertEquals((25.5 + 27.5 + 18.9 + 19.3 + 13.2)/5, averageTemperature);
     }
+
+    @Test
+    void testMedianaTempMock() {
+        //Given
+        WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+
+        //When
+        double medianaTemperature = weatherForecast.medianaTemp();
+
+        //Then
+        assertEquals(19.3, medianaTemperature);
+    }
 }

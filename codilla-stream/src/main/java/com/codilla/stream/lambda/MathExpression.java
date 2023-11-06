@@ -1,2 +1,6 @@
-package com.codilla.stream.lambda;public interface MathExpression {
+package com.codilla.stream.lambda;
+
+public interface MathExpression {
+
+    public double calculateExpression(double a, double b);
 }

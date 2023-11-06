@@ -7,4 +7,5 @@ pluginManagement {
 }
 rootProject.name = 'codilla-course'
 include 'codilla-testing'
+include 'codilla-stream'
 

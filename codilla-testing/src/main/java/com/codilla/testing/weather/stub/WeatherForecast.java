@@ -1,7 +1,6 @@
 package com.codilla.testing.weather.stub;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class WeatherForecast {
 
@@ -26,5 +25,26 @@ public class WeatherForecast {
             sum += temp;
         }
         return sum/temperatures.getTemperatures().size();
+    }
+
+    public Double medianaTemp() {
+
+        List<Double> medianaList = new ArrayList<>();
+        double mediana;
+
+        if (temperatures.getTemperatures().size() % 2 == 0) {
+            for (Double temp : temperatures.getTemperatures().values()) {
+                medianaList.add(temp);
+            }
+            Collections.sort(medianaList);
+            mediana = (medianaList.get(medianaList.size()/2) + medianaList.get(medianaList.size() / 2 - 1)) / 2;
+        } else {
+            for (Double temp : temperatures.getTemperatures().values()) {
+                medianaList.add(temp);
+            }
+            Collections.sort(medianaList);
+            mediana = (medianaList.get(medianaList.size() / 2));
+        }
+        return mediana;
     }
 }
